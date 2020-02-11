@@ -1,0 +1,10 @@
+
+
+
+<div class="container"> <h1><%= @task.title %> </h1>
+<h2><%= @task.details %> </h2>
+
+
+<h1><input type="checkbox"></h1>
+<button><%= link_to "Delete #{@task.title}" , task_path(@task), data: {:confirm => 'Are you sure?'}, :method => :delete %> </button>
+</div>

@@ -1,0 +1,21 @@
+ <h1>TO DO List</h1>
+<div class = "container">
+  <h2>
+    <% @tasks.each do|task| %>
+  <% if task.completed %>
+    <input type="checkbox" checked disabled >
+  <% else %>
+    <input type="checkbox" disabled>
+  <% end %>
+  <%= link_to task[:title], task_path(task[:id]) %><br>
+    <% end %>
+  </h2>
+</div>
+
+
+
+
+
+
+
+
