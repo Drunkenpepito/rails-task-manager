@@ -2,9 +2,18 @@
 
 
 <div class="container"> <h1><%= @task.title %> </h1>
-<h2><%= @task.details %> </h2>
+  <h2><%= @task.details %> </h2>
 
+  <% if @task.completed %>
+  <h5><input type="checkbox" disabled checked >Completed !</h5>
+  <% else %>
+  <h5><input type="checkbox" disabled >Not completed yet</h5>
+  <% end %>
 
-<h1><input type="checkbox"></h1>
-<button><%= link_to "Delete #{@task.title}" , task_path(@task), data: {:confirm => 'Are you sure?'}, :method => :delete %> </button>
+  <button><%= link_to "Delete #{@task.title}" , task_path(@task), data: {:confirm => 'Are you sure?'}, :method => :delete %> </button>
 </div>
+
+<div>
+  <h5><%= link_to "Go Back" ,tasks_path %></h5>
+</div>
+
